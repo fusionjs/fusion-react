@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-yarn test --coverage
-bash <(curl -s https://codecov.io/bash) -f coverage/coverage-final.json -n node

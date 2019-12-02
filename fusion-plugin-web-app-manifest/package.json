@@ -60,7 +60,7 @@
     "build-test": "rm -rf dist-tests && cup build-tests",
     "just-test": "node_modules/.bin/unitest --browser=dist-tests/browser.js --node=dist-tests/node.js",
     "test": "npm run build-test && npm run just-test",
-    "cover": "npm run build-test && nyc npm run just-test",
+    "cover": "npm run build-test && nyc --reporter=json npm run just-test",
     "view-cover": "npm run cover && open coverage/index.html",
     "prepare": "npm run build",
     "prepublish": "npm run build"

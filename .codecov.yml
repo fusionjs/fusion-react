@@ -1,0 +1,17 @@
+# NOTE: package paths are dynamically populated from manifest.json
+# via .buildkite/codecov/generate-yml.sh
+
+parsers:
+  javascript:
+    enable_partials: 'yes'
+# docs on codecov flags: https://docs.codecov.io/docs/flags
+coverage:
+  status:
+    project:
+      default: off
+      packages:
+        flags: packages
+flags:
+  packages:
+    paths:
+      # package paths populated here

@@ -59,7 +59,7 @@
     "build-test": "rm -rf dist-test && cup build-tests",
     "just-test": "node dist-tests/node.js",
     "test": "yarn build-test && yarn just-test",
-    "cover": "nyc yarn test",
+    "cover": "nyc --reporter=json yarn test",
     "prepublish": "yarn build",
     "build": "yarn clean && cup build",
     "flow": "flow check"

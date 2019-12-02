@@ -68,7 +68,7 @@
     "clean": "cup4 clean",
     "lint": "eslint . --ignore-path .gitignore",
     "test": "jest",
-    "cover": "nyc jest",
+    "cover": "nyc --reporter=json jest",
     "prepublish": "npm run build",
     "build": "npm run clean && cup4 build",
     "flow": "flow check"

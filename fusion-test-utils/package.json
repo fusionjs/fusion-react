@@ -54,7 +54,7 @@
     "build-test": "rm -rf dist-tests && cup build-tests",
     "just-test": "node_modules/.bin/unitest --browser=dist-tests/browser.js --node=dist-tests/node.js",
     "test": "npm run build-test && npm run just-test",
-    "cover": "npm run build-test && nyc npm run just-test",
+    "cover": "npm run build-test && nyc --reporter=json npm run just-test",
     "prepublish": "npm run build",
     "build": "npm run clean && cup build",
     "flow": "flow check"

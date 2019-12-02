@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-./node_modules/.bin/nyc --instrument=false --exclude-after-remap=false --reporter=text --reporter=json node dist-tests/node.js || exit 1
-bash <(curl -s https://codecov.io/bash) -f coverage/coverage-final.json -n node

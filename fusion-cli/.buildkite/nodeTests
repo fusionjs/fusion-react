@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
 yarn test --testPathPattern=$(export JOB_COUNT=$BUILDKITE_PARALLEL_JOB_COUNT; export JOB_INDEX=$BUILDKITE_PARALLEL_JOB; node get-test-files.js) || exit 1
-# bash <(curl -s https://codecov.io/bash) -f coverage/coverage-final.json -n node

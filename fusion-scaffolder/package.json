@@ -45,7 +45,7 @@
     "lint": "eslint .",
     "fast-test": "babel-node test/index.js",
     "test": "yarn fast-test",
-    "cover": "nyc yarn test",
+    "cover": "nyc --reporter=json yarn test",
     "build": "echo ok",
     "flow": "flow check"
   },

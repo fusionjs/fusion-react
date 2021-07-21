@@ -160,5 +160,8 @@ module.exports = {
     // eslint-config-jest@23 adds these rules that are incompatible with `fusion-test-utils`
     'jest/expect-expect': 'off',
     'jest/no-test-callback': 'off',
+
+    // Disallow the use of `console`
+    'no-console': 'error',
   },
 };

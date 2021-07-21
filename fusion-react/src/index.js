@@ -18,6 +18,7 @@ import FusionApp, {
 import {prepare} from './async/index.js';
 import PrepareProvider from './async/prepare-provider';
 import {LoggerToken} from 'fusion-tokens';
+import {UniversalEventsToken} from 'fusion-plugin-universal-events';
 
 import serverRender from './server';
 import clientRender from './client';
@@ -63,6 +64,7 @@ export default class App extends FusionApp {
         criticalChunkIds: CriticalChunkIdsToken.optional,
         skipPrepare: SkipPrepareToken.optional,
         logger: LoggerToken.optional,
+        emitter: UniversalEventsToken.optional,
       },
       provides({skipPrepare, logger}) {
         return (el: React.Element<*>, ctx) => {
@@ -73,7 +75,7 @@ export default class App extends FusionApp {
                 return render(el, ctx);
               }
               if (__NODE__) {
-                return serverRender(el, logger);
+                return serverRender(el, logger, emitter);
               } else {
                 return clientRender(el);
               }

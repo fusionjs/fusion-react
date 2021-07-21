@@ -10,8 +10,12 @@
 import * as React from 'react';
 import {renderToString} from 'react-dom/server';
 import type {Logger} from 'fusion-tokens';
+import {UniversalEventsToken} from 'fusion-plugin-universal-events';
 
-export default (el: React.Element<*>, logger?: Logger) => {
+type ExtractReturnType = <V>(() => V) => V;
+type IEmitter = $Call<ExtractReturnType, typeof UniversalEventsToken>;
+
+export default (el: React.Element<*>, logger?: Logger, emitter?: IEmitter) => {
   try {
     return `<div id='root'>${renderToString(el)}</div>`;
   } catch (e) {
@@ -22,6 +26,10 @@ export default (el: React.Element<*>, logger?: Logger) => {
       );
     }
     logger && logger.error('SSR Failed with Error', e);
+    emitter && emitter.emit('ssr-status', {
+      error: e,
+      status: 'failure',
+    });
     return '<div id="root" data-fusion-render="client"></div>';
   }
 };

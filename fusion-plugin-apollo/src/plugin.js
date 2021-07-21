@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-
+import {UniversalEventsToken} from 'fusion-plugin-universal-events';
 import {createPlugin, html, unescape, RouteTagsToken} from 'fusion-core';
 
 import {ApolloProvider} from '@apollo/react-common';
@@ -39,6 +39,7 @@ export type DepsType = {
   getDataFromTree: typeof GetDataFromTreeToken.optional,
   bodyParserConfig: typeof ApolloBodyParserConfigToken.optional,
   defaultOptionsConfig: typeof ApolloDefaultOptionsConfigToken.optional,
+  emitter: typeof UniversalEventsToken.optional,
 };
 
 export type ProvidesType = (el: any, ctx: Context) => Promise<any>;
@@ -55,6 +56,7 @@ function getDeps(): DepsType {
       getDataFromTree: GetDataFromTreeToken.optional,
       bodyParserConfig: ApolloBodyParserConfigToken.optional,
       defaultOptionsConfig: ApolloDefaultOptionsConfigToken.optional,
+      emitter: UniversalEventsToken.optional,
     };
   }
   // $FlowFixMe
@@ -71,7 +73,7 @@ export default (renderFn: Render) =>
         return renderFn;
       }
       return (el, ctx) => {
-        return serverRender(el, deps.logger, deps.getDataFromTree).then(() => {
+        return serverRender(el, deps.logger, deps.getDataFromTree, deps.emitter).then(() => {
           return renderFn(el, ctx);
         });
       };

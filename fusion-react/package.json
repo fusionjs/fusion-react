@@ -23,6 +23,7 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "flow-bin": "^0.109.0",
     "fusion-core": "0.0.0-monorepo",
+    "fusion-plugin-universal-events": "0.0.0-monorepo",
     "fusion-test-utils": "0.0.0-monorepo",
     "jest": "^25.1.0",
     "just-compose": "^1.1.0",
@@ -44,6 +45,7 @@
   "module": "./dist-node-esm/index.js",
   "peerDependencies": {
     "fusion-core": "0.0.0-monorepo",
+    "fusion-plugin-universal-events": "0.0.0-monorepo",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },

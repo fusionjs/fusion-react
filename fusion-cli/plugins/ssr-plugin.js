@@ -194,6 +194,8 @@ function checkModuleSupport({name, version}) {
     if (majorVersion(version) >= modernBrowserVersions.ios) return true;
   } else if (name === 'Firefox') {
     if (majorVersion(version) >= modernBrowserVersions.firefox) return true;
+  } else if (name === 'Edge') {
+    if (majorVersion(version) >= modernBrowserVersions.edge) return true;
   }
   return false;
 }

@@ -13,4 +13,5 @@ module.exports = {
   firefox: 60,
   android: 61,
   ios: 12,
+  edge: 79,
 };

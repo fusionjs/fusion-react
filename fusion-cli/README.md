@@ -88,6 +88,7 @@ The CLI API can be most easily run through the Yarn or NPX CLI, e.g. `yarn fusio
   - `--clearCache`: Jest CLI argument. See: https://jestjs.io/docs/en/cli.html#clearcache
   - `--colors`: Jest CLI argument. See: https://jestjs.io/docs/en/cli.html#colors
   - `--coverage`: Jest CLI argument. See: https://jestjs.io/docs/en/cli.html#coverage
+  - `--collectCoverage`: Jest CLI argument. Alias for `--coverage` See: https://jestjs.io/docs/en/cli.html#coverage
   - `--detectOpenHandles`: Jest CLI argument. See: https://jestjs.io/docs/en/cli.html#detectopenhandles
   - `--errorOnDeprecated`: Jest CLI argument. See: https://jestjs.io/docs/en/cli.html#errorondeprecated
   - `--expand`: Jest CLI argument. See: https://jestjs.io/docs/en/cli.html#expand
